@@ -23,65 +23,54 @@ const template = (
     </div>
 );
 
-// const appRoot2 = document.getElementById('app2');
+const appRoot2 = document.getElementById('app2');
 
-// ReactDOM.render(template, appRoot2);
+ReactDOM.render(template, appRoot2);
 
 //****************************************** */
 
 let count = 0;
+// Add 1 from count
 const addOne = () => {
-    console.log('addOne');
+    count++;
+    renderCounterApp();
+};
+// Subtract 1 from count
+const minusOne = () => {
+    count--;
+    renderCounterApp();
+};
+// reset count to 0
+const reset = () => {
+    count = 0;
+    renderCounterApp();
 };
 
 const templateTwo = (
     <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-</div>
-);
-
-console.log(templateTwo);
-    
-
-const appRoot = document.getElementById('app');
-
-ReactDOM.render(templateTwo, appRoot);
-
-//**********************************************
-let countThree = 0;
-const minusOne = () => {
-    console.log('minusOne');
-};
-
-const templateThree = (
-    <div>
-    <h1>Count: {countThree}</h1>
-    <button onClick={minusOne}>-1</button>
-</div>
-);
-
-
-const appRoot3 = document.getElementById('app3');
-
-ReactDOM.render(templateThree, appRoot3);
-
-//**********************************************
-let countFour = 0;
-const reset = () => {
-    console.log('reset');
-};
-
-const templateFour = (
-    <div>
-    <h1>Count: {countFour}</h1>
-    <button onClick = {reset}>reset</button>
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
+        <button onClick={minusOne}>-1</button>
+        <button onClick={reset}>reset</button>
     </div>
 );
 
-const appRoot4 = document.getElementById('app4');
+const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateFour, appRoot4);
+const renderCounterApp = () => {
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>reset</button>
+        </div>
+    );
+
+    ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
 
 //**********************************************
 //Object
